@@ -16,7 +16,7 @@ O arquivo `index.html` define a estrutura do site, incluindo o cabeçalho, banne
 
 ### Conteúdo do Site
 
-O site possui um banner com botões de chamada para ação, uma seção de serviços que descreve como funciona o pedido e a entrega, uma seção de cardápio que lista os itens disponíveis, uma seção de depoimentos de clientes satisfeitos e uma seção de reservas. O rodapé ainda está em branco e precisa ser preenchido.
+O site possui um banner com botões de chamada para ação, uma seção de serviços que descreve como funciona o pedido e a entrega, uma seção de cardápio que lista os itens disponíveis, uma seção de depoimentos de clientes satisfeitos e uma seção de reservas. O rodapé contém informações sobre a empresa, além de links para as redes sociais e a política de privacidade e termos de uso do site.
 
 ### Integração com WhatsApp e API de Busca de CEP
 
@@ -26,6 +26,18 @@ O projeto inclui a integração com o WhatsApp para que os clientes possam fazer
 
 Todos os ícones e imagens utilizados no projeto foram retirados de dois sites: [FontAwesome](https://fontawesome.com/v5/search) e [Undraw](https://undraw.co/search). O FontAwesome é uma biblioteca de ícones amplamente utilizada na web, enquanto o Undraw oferece ilustrações vetoriais gratuitas para uso em projetos.
 
-## Conclusão
+## Como Executar o Projeto
 
-Este projeto de cardápio online com integração para pedido via WhatsApp e API de busca de CEP é uma solução prática e conveniente para os clientes do restaurante "Mônica Salgados". Com uma estrutura HTML bem definida e recursos visuais atraentes, o site oferece uma experiência agradável aos usuários, facilitando o processo de escolha e pedido de alimentos.
+Para executar este projeto localmente, siga as etapas abaixo:
+
+1. Clone o repositório: `git clone https://github.com/seu-usuario/cardapio-online.git`
+2. Navegue até o diretório do projeto: `cd cardapio-online`
+3. Abra o arquivo `index.html` em seu navegador da web preferido.
+
+## Contribuição
+
+Contribuições para este projeto são bem-vindas. Você pode contribuir relatando problemas, sugerindo melhorias ou enviando pull requests. Por favor, siga as diretrizes de estilo e padrões de código existentes.
+
+## Licença
+
+Este projeto está licenciado sob a [Licença MIT](LICENSE). Sinta-se à vontade para usar e modificar o código de acordo com suas necessidades.
