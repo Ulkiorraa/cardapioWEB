@@ -46,9 +46,9 @@ a.navbar-brand {
 }
 
 .nav-link {
-    color: var(--color-black) !important;/*Important para não mudar a cor com mouse over*/
-    padding-left: 35px !important; /*Important para não usar o bootstrap e sim o que coloquei manual*/
-    padding-right: 35px !important; /*Important para não usar o bootstrap e sim o que coloquei manual*/
+    color: var(--color-black) !important;
+    padding-left: 35px !important;
+    padding-right: 35px !important;
 }
 
 .btn-white {
@@ -627,4 +627,28 @@ footer {
 .container-total .valor-total {
     color: var(--color-primary);
     font-size: 24px;
+}
+
+.form-control {
+    background-color: var(--color-white);
+    color: var(--color-black) !important;
+    border-radius: 20px;
+    padding: 15px 25px;
+    font-size: 20px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 1) !important;
+    border: none !important;
+}
+
+select.form-control {
+    height: 60px !important;
+}
+
+.container-cep .form-control {
+    padding-right: 75px;
+}
+
+.container-cep .btn {
+    position: absolute;
+    right: 25px;
+    top: 38px;
 }
