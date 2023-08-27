@@ -73,46 +73,103 @@ cardapio.metodos = {
 
   //adiciona no carrinho o item do cardápio
   adicionarAoCarrinho: (id) => {
-
     let qntdAtual = parseInt($("#qntd-" + id).text());
 
-    if (qntdAtual > 0){
-
+    if (qntdAtual > 0) {
       //obter a categoria ativa
-      var categoria = $(".container-menu a.active").attr("id").split("menu-")[1];
+      var categoria = $(".container-menu a.active")
+        .attr("id")
+        .split("menu-")[1];
 
       //obtém a lista de itens
       let filtro = MENU[categoria];
 
       //obtém o item
-      let item = $.grep(filtro, (e, i) => {return e.id == id})
+      let item = $.grep(filtro, (e, i) => {
+        return e.id == id;
+      });
 
-      if(item.length > 0){
-
+      if (item.length > 0) {
         //validar se existe esse item no carrinho
-        let existe = $.grep(MEU_CARRINHO, (elem, index) => {return elem.id == id})
+        let existe = $.grep(MEU_CARRINHO, (elem, index) => {
+          return elem.id == id;
+        });
 
         //caso exista o item so altera a quantidade
-        if(existe.length > 0){
+        if (existe.length > 0) {
           //pega posição do item no carrinho
-          let objIndex = MEU_CARRINHO.findIndex((obj => obj.id == id))
+          let objIndex = MEU_CARRINHO.findIndex((obj) => obj.id == id);
           MEU_CARRINHO[objIndex].qntd = MEU_CARRINHO[objIndex].qntd + qntdAtual;
-
         }
         //caso ainda não exista adiciona ele
-        else{
+        else {
           item[0].qntd = qntdAtual;
           MEU_CARRINHO.push(item[0]);
         }
 
+        cardapio.metodos.mensagem('Item adicionado ao carrinho', 'green');
+        $("#qntd-" + id).text(0);
 
-        alert('Item adicionado ao carrinho.')
-        $("#qntd-" + id).text(0)
+        cardapio.metodos.atualizarBadgeTotal();
       }
+    }
+  },
 
+  //atualiza o total de itens adicionados no carrinho
+  atualizarBadgeTotal: () => {
+    var total = 0;
+
+    $.each(MEU_CARRINHO, (i, e) => {
+      total += e.qntd;
+    })
+
+    if (total > 0) {
+      $(".botao-carrinho").removeClass('hidden');
+      $(".container-total-carrinho").removeClass('hidden');
+    } else {
+      $(".botao-carrinho").addClass('hidden');
+      $(".container-total-carrinho").addClass('hidden');
     }
 
+    $(".badge-total-carrinho").html(total);
   },
+
+  //abrir a modal do carrinho
+  abrirCarrinho: (abrir) => {
+
+    if(abrir){
+      $("#modalCarrinho").removeClass('hidden');
+    }
+    else{
+      $("#modalCarrinho").addClass('hidden');
+    }
+  },
+
+
+
+
+
+
+
+
+  //mensagens personalizadas
+  mensagem: (texto, cor = 'red', tempo = 3500) => {
+
+    let id = Math.floor(Date.now() * Math.random()).toString();
+
+    let msg = `<div id="msg-${id}" class="animated fadeInDown toast ${cor}">${texto}</div>`
+
+    $("#container-mensagem").append(msg)
+
+    setTimeout(() => {
+      $("#msg-" + id).removeClass('fadeInDown');
+      $("#msg-" + id).addClass('fadeOutUp');
+      setTimeout(() => {
+        $("#msg-" + id).remove();
+      }, 800);
+    }, tempo)
+
+  }
 };
 
 cardapio.templates = {
