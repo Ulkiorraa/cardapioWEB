@@ -497,21 +497,21 @@
               </div>
             </div>
 
-            <div class="col-6">
+            <div class="col-6 mb-3">
               <div class="form-froup">
                 <label>Cidade:</label>
                 <input id="txtCidade" type="text" class="form-control" />
               </div>
             </div>
 
-            <div class="col-4">
+            <div class="col-4 mb-3">
               <div class="form-froup">
                 <label>Complemento:</label>
                 <input id="txtComplemento" type="text" class="form-control" />
               </div>
             </div>
 
-            <div class="col-2">
+            <div class="col-2 mb-3">
               <div class="form-froup">
                 <label>UF:</label>
                 <select id="ddlUF" class="form-control">
@@ -548,7 +548,7 @@
             </div>
           </div>
 
-          <div id="resumoCarrinho" class="row mr-0 ml-0">
+          <div id="resumoCarrinho" class="row mr-0 ml-0 hidden">
 
             <div class="col-12">
               <p class="title-carrinho mt-4">
@@ -623,11 +623,11 @@
           </p>
 
         </div>
-        <a class="btn btn-yellow float-right" id="btnEtapaPedido">
+        <a onclick="cardapio.metodos.carregarEtapa(2)" class="btn btn-yellow float-right" id="btnEtapaPedido">
           Continuar
         </a>
 
-        <a class="btn btn-yellow float-right hidden" id="btnEtapaEndereco">
+        <a onclick="cardapio.metodos.carregarEtapa(3)" class="btn btn-yellow float-right hidden" id="btnEtapaEndereco">
           Revisar Pedido
         </a>
 
@@ -635,7 +635,7 @@
           Enviar Pedido
         </a>
 
-        <a class="btn btn-white float-right mr-3 hidden" id="btnVoltar">
+        <a onclick="cardapio.metodos.voltarEtapa()" class="btn btn-white float-right mr-3 hidden" id="btnVoltar">
           Voltar
         </a>
 
