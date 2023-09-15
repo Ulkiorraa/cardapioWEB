@@ -433,9 +433,9 @@ cardapio.metodos = {
 
     //monta a lista de itens para o pedido no whatsapp
     if(MEU_CARRINHO.length > 0 && MEU_CARRINHO != null) {
-      var texto = `Olá, gostaria de fazer o pedido:`;
+      var texto = 'Olá, gostaria de fazer o pedido:';
       texto += `\n*Itens do pedido:* \n\${itens}`;
-      texto += '*Endereço de entrega:*';
+      texto += '\n*Endereço de entrega:*';
       texto += `\n${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero}, ${MEU_ENDERECO.bairro}`;
       texto += `\n${MEU_ENDERECO.cidade} - ${MEU_ENDERECO.uf} / ${MEU_ENDERECO.cep} ${MEU_ENDERECO.complemento}`;
       texto += `\n\n*Valor total:* R$ ${(VALOR_CARRINHO + VALOR_ENTREGA).toFixed(2).replace(".", ",")}`;
