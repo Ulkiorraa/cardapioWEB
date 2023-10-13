@@ -2,26 +2,28 @@ $(document).ready(function () {
   cardapio.eventos.init();
 });
 
-var cardapio = {};
+let cardapio = {};
 
-var MEU_CARRINHO = [];
-var MEU_ENDERECO = null;
+let MEU_CARRINHO = [];
+let MEU_ENDERECO = null;
 
-var VALOR_CARRINHO = 0;
-var VALOR_ENTREGA = 3;
+let VALOR_CARRINHO = 0;
+let VALOR_ENTREGA = 3;
 
-var CELULAR_EMPRESA = '5564999264069';
+let CELULAR_EMPRESA = '5566966666666';
 
 cardapio.eventos = {
   init: () => {
     cardapio.metodos.obterItensCardapio();
+    cardapio.metodos.carregaBotaoReserva();
+    cardapio.metodos.carregarBotaoLigar();
   },
 };
 
 cardapio.metodos = {
   //obtém a lista de itens do cardapio
   obterItensCardapio: (categoria = "burgers", vermais = false) => {
-    var filtro = MENU[categoria];
+    let filtro = MENU[categoria];
 
     //limpa o cardapio para troca de menus mas não limpa em caso de clicar em ver mais
     if (!vermais) {
@@ -57,7 +59,7 @@ cardapio.metodos = {
 
   //botão ver mais click
   verMais: () => {
-    var ativo = $(".container-menu a.active").attr("id").split("menu-")[1]; //pega o id ex: menu-burger separa em [menu-] [burger] 0 e 1 e escolhe o 1 que é o nome da categoria ativa
+    let ativo = $(".container-menu a.active").attr("id").split("menu-")[1]; //pega o id ex: menu-burger separa em [menu-] [burger] 0 e 1 e escolhe o 1 que é o nome da categoria ativa
     cardapio.metodos.obterItensCardapio(ativo, true);
     $("#btnVerMais").addClass("hidden");
   },
@@ -83,7 +85,7 @@ cardapio.metodos = {
 
     if (qntdAtual > 0) {
       //obter a categoria ativa
-      var categoria = $(".container-menu a.active")
+      let categoria = $(".container-menu a.active")
         .attr("id")
         .split("menu-")[1];
 
@@ -123,7 +125,7 @@ cardapio.metodos = {
 
   //atualiza o total de itens adicionados no carrinho
   atualizarBadgeTotal: () => {
-    var total = 0;
+    let total = 0;
 
     $.each(MEU_CARRINHO, (i, e) => {
       total += e.qntd;
@@ -310,13 +312,13 @@ cardapio.metodos = {
   //Carrega o Endereço de entrega através do CEP usando a API do ViaCEP
   buscarCep: () => {
     //cria a variável cep e remove os caracteres especiais
-    var cep = $("#txtCEP").val().trim().replace(/\D/g, '');
+    let cep = $("#txtCEP").val().trim().replace(/\D/g, '');
 
     //valida se o cep possui valor informado
     if(cep != '') {
 
       //valida se o cep possui 8 caracteres
-      var validacep = /^[0-9]{8}$/;
+      let validacep = /^\d{8}$/;
 
       //valida o formato do cep
       if(validacep.test(cep)) {
@@ -433,14 +435,14 @@ cardapio.metodos = {
 
     //monta a lista de itens para o pedido no whatsapp
     if(MEU_CARRINHO.length > 0 && MEU_CARRINHO != null) {
-      var texto = 'Olá, gostaria de fazer o pedido:';
+      let texto = 'Olá, gostaria de fazer o pedido:';
       texto += `\n*Itens do pedido:* \n\${itens}`;
       texto += '\n*Endereço de entrega:*';
       texto += `\n${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero}, ${MEU_ENDERECO.bairro}`;
       texto += `\n${MEU_ENDERECO.cidade} - ${MEU_ENDERECO.uf} / ${MEU_ENDERECO.cep} ${MEU_ENDERECO.complemento}`;
       texto += `\n\n*Valor total:* R$ ${(VALOR_CARRINHO + VALOR_ENTREGA).toFixed(2).replace(".", ",")}`;
 
-      var itens = '';
+      let itens = '';
 
 
       $.each(MEU_CARRINHO, (i, e) => {
@@ -460,6 +462,44 @@ cardapio.metodos = {
 
   },
 
+  //carrega o botão de reserva
+  carregaBotaoReserva: () => {
+    const texto = 'Olá, gostaria de fazer uma *reserva*:';
+
+    let encode = encodeURI(texto);
+    let link = `https://api.whatsapp.com/send?phone=${CELULAR_EMPRESA}&text=${encode}`;
+    $("#btnReserva").attr('href', link);
+
+  },
+
+  //carrega o botão de ligar
+  carregarBotaoLigar: () => {
+    $("#btnLigar").attr('href', `tel:${CELULAR_EMPRESA}`);
+  },
+
+  //abre o depoimentos
+  abrirDepoimento: (depoimento) => {
+    $("#depoimento-1").addClass('hidden');
+    $("#depoimento-2").addClass('hidden');
+    $("#depoimento-3").addClass('hidden');
+
+    $("#btnDepoimento-1").removeClass('active');
+    $("#btnDepoimento-2").removeClass('active');
+    $("#btnDepoimento-3").removeClass('active');
+
+    $("#depoimento-" + depoimento).removeClass('hidden');
+    $("#btnDepoimento-" + depoimento).addClass('active');
+  },
+
+  //carrega o botão do whatsapp
+  carregarBotaoWhats: () => {
+    const texto = 'Olá, gostaria de fazer um *pedido*:';
+
+    let encode = encodeURI(texto);
+    let link = `https://api.whatsapp.com/send?phone=${CELULAR_EMPRESA}&text=${encode}`;
+    $("#btnWhats").attr('href', link);
+    $("#btnWhatsFooter").attr('href', link);
+  },
 
 
 

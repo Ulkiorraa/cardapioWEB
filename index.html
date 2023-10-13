@@ -11,10 +11,12 @@
   </head>
 
   <body>
-
     <div class="container-mensagem" id="container-mensagem"></div>
 
-    <a class="btn botao-carrinho hidden" onclick="cardapio.metodos.abrirCarrinho(true)">
+    <a
+      class="btn botao-carrinho hidden"
+      onclick="cardapio.metodos.abrirCarrinho(true)"
+    >
       <span class="icon">
         <div class="badge-total-carrinho">0</div>
         <i class="fa fa-shopping-bag"></i>
@@ -24,12 +26,21 @@
     <section class="header">
       <div class="container">
         <nav class="navbar navbar-expand-lg pl-0 pr-0">
-
           <a class="navbar-brand" href="#">
-            <img src="./img/logo.png" width="160" class="img-logo" />
+            <img
+              src="./img/logo.png"
+              width="160"
+              class="img-logo"
+              alt="logo.img"
+            />
           </a>
 
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNavDropdown"
+          >
             <span class="navbar-toggler-icon">
               <i class="fas fa-bars"></i>
             </span>
@@ -37,7 +48,6 @@
 
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto mr-auto">
-
               <li class="nav-item">
                 <a href="#reservas" class="nav-link"><b>Reservas</b></a>
               </li>
@@ -53,17 +63,22 @@
               <li class="nav-item">
                 <a href="#depoimentos" class="nav-link"><b>Depoimentos</b></a>
               </li>
-
             </ul>
 
-            <a class="btn btn-white btn-icon" onclick="cardapio.metodos.abrirCarrinho(true)">
+            <a
+              class="btn btn-white btn-icon"
+              onclick="cardapio.metodos.abrirCarrinho(true)"
+            >
               Meu carrinho
               <span class="icon">
-                <div class="container-total-carrinho badge-total-carrinho hidden">0</div>
+                <div
+                  class="container-total-carrinho badge-total-carrinho hidden"
+                >
+                  0
+                </div>
                 <i class="fa fa-shopping-bag"></i>
               </span>
             </a>
-
           </div>
         </nav>
       </div>
@@ -73,7 +88,6 @@
       <div class="container">
         <div class="row">
           <div class="col-6">
-
             <div class="d-flex text-banner">
               <h1>
                 <b>Escolha sua comida <b class="color-primary">favorita.</b></b>
@@ -83,8 +97,10 @@
                 casa de forma rápida e segura
               </p>
               <div>
-                <a class="btn btn-yellow mt-4 mr-3"> Ver cardápio </a>
-                <a class="btn btn-white btn-icon-left mt-4">
+                <a class="btn btn-yellow mt-4 mr-3" href="#cardapio">
+                  Ver cardápio
+                </a>
+                <a href="#" class="btn btn-white btn-icon-left mt-4" id="btnLigar">
                   <span class="icon-left">
                     <i class="fa fa-phone"></i>
                   </span>
@@ -93,35 +109,32 @@
               </div>
             </div>
 
-            <a class="btn btn-sm btn-white btn-social mt-4 mr-3">
+            <a href="https://instagram.com" target="_blank" class="btn btn-sm btn-white btn-social mt-4 mr-3">
               <i class="fab fa-instagram"></i>
             </a>
 
-            <a class="btn btn-sm btn-white btn-social mt-4 mr-3">
+            <a href="https://facebook.com" target="_blank" class="btn btn-sm btn-white btn-social mt-4 mr-3">
               <i class="fab fa-facebook-f"></i>
             </a>
 
-            <a class="btn btn-sm btn-white btn-social mt-4">
+            <a href="#" id="btnWhats" target="_blank" onclick="cardapio.metodos.carregarBotaoWhats()" class="btn btn-sm btn-white btn-social mt-4">
               <i class="fab fa-whatsapp"></i>
             </a>
-
           </div>
           <div class="col-6">
-
             <div class="card-banner"></div>
             <div class="d-flex img-banner">
-              <img src="./img/burguer.png" />
+              <img src="./img/burguer.png" alt="burgerBanner.img" />
             </div>
 
             <div class="card card-case">
               "Entrega rápida e funcionários simpáticos.
-              <br>A comida chegou quente e <br>
+              <br />A comida chegou quente e <br />
               muito saborosa!"
               <span class="card-case-name">
                 <b>Jefferson Caminhões</b>
               </span>
             </div>
-
           </div>
         </div>
       </div>
@@ -131,7 +144,6 @@
       <div class="background-service"></div>
       <div class="container">
         <div class="row">
-
           <div class="col-12 text-center mb-5">
             <span class="hint-title"><b>Serviços</b></span>
             <h1 class="title">
@@ -141,7 +153,11 @@
 
           <div class="col-4 mb-5">
             <div class="card-icon text-center">
-              <img src="./img/icone-pedido.svg" width="150" />
+              <img
+                src="./img/icone-pedido.svg"
+                width="150"
+                alt="iconPedido.img"
+              />
             </div>
             <div class="card-text text-center mt-3">
               <p><b>Fácil de pedir</b></p>
@@ -153,7 +169,7 @@
 
           <div class="col-4 mb-5">
             <div class="card-icon text-center">
-              <img src="./img/icone-delivery.svg" width="250" />
+              <img src="./img/icone-delivery.svg" width="250" alt="iconDel.img" />
             </div>
             <div class="card-text text-center mt-3">
               <p><b>Entrega rápida</b></p>
@@ -163,7 +179,7 @@
 
           <div class="col-4 mb-5">
             <div class="card-icon text-center">
-              <img src="./img/icone-qualidade.svg" width="250" />
+              <img src="./img/icone-qualidade.svg" width="250" alt="iconQlt.img" />
             </div>
             <div class="card-text text-center mt-3">
               <p><b>Melhor qualidade</b></p>
@@ -172,7 +188,6 @@
               </span>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -182,52 +197,74 @@
       <div class="container">
         <div class="row">
           <div class="col-12 text-center mb-5">
-
             <span class="hint-title"><b>Cardápio</b></span>
             <h1 class="title">
               <b>Conheça nosso cardápio</b>
             </h1>
-
           </div>
           <div class="col-12 container-menu">
-
-            <a id="menu-burgers" class="btn btn-white btn-sm mr-3 active" onclick="cardapio.metodos.obterItensCardapio('burgers')">
+            <a
+              id="menu-burgers"
+              class="btn btn-white btn-sm mr-3 active"
+              onclick="cardapio.metodos.obterItensCardapio('burgers')"
+            >
               <i class="fas fa-hamburger"></i>&nbsp; Burgers
             </a>
 
-            <a id="menu-pizzas" class="btn btn-white btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('pizzas')">
+            <a
+              id="menu-pizzas"
+              class="btn btn-white btn-sm mr-3"
+              onclick="cardapio.metodos.obterItensCardapio('pizzas')"
+            >
               <i class="fas fa-pizza-slice"></i>&nbsp; Pizzas
             </a>
 
-            <a id="menu-churrasco" class="btn btn-white btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('churrasco')">
+            <a
+              id="menu-churrasco"
+              class="btn btn-white btn-sm mr-3"
+              onclick="cardapio.metodos.obterItensCardapio('churrasco')"
+            >
               <i class="fas fa-drumstick-bite"></i>&nbsp; Churrasco
             </a>
 
-            <a id="menu-steaks" class="btn btn-white btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('steaks')">
+            <a
+              id="menu-steaks"
+              class="btn btn-white btn-sm mr-3"
+              onclick="cardapio.metodos.obterItensCardapio('steaks')"
+            >
               <i class="fas fa-bacon"></i>&nbsp; Steaks
             </a>
 
-            <a id="menu-drinks" class="btn btn-white btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('drinks')">
+            <a
+              id="menu-drinks"
+              class="btn btn-white btn-sm mr-3"
+              onclick="cardapio.metodos.obterItensCardapio('drinks')"
+            >
               <i class="fas fa-cocktail"></i>&nbsp; Drinks
             </a>
 
-            <a id="menu-sobremesas" class="btn btn-white btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('sobremesas')">
+            <a
+              id="menu-sobremesas"
+              class="btn btn-white btn-sm mr-3"
+              onclick="cardapio.metodos.obterItensCardapio('sobremesas')"
+            >
               <i class="fas fa-ice-cream"></i>&nbsp; Sobremesas
             </a>
-
           </div>
           <div class="col-12">
             <div class="row" id="itensMenu">
-
               <!--Itens inseridos pelo js-->
-
             </div>
           </div>
 
           <div class="col-12 text-center">
-            <a id="btnVerMais" class="btn btn-white btn-sm" onclick="cardapio.metodos.verMais()">Ver mais</a>
+            <a
+              id="btnVerMais"
+              class="btn btn-white btn-sm"
+              onclick="cardapio.metodos.verMais()"
+              >Ver mais</a
+            >
           </div>
-
         </div>
       </div>
     </section>
@@ -236,29 +273,25 @@
       <div class="background-assessments"></div>
       <div class="container">
         <div class="row">
-
           <div class="col-5 text-center">
             <div class="card-depoimentos">
               <div class="d-flex img-banner">
-                <img src="./img/pizzas.png" />
+                <img src="./img/pizzas.png" alt="dep.img" />
               </div>
             </div>
           </div>
 
           <div class="col-7">
-
             <span class="hint-title"><b>Depoimento</b></span>
             <h1 class="title">
               <b>O que dizem sobre nós?</b>
             </h1>
 
             <div class="mb-5">
-
               <div class="depoimento" id="depoimento-1">
                 <div class="container-dados-depoimento">
                   <div class="imagem-depoimento"></div>
                   <div>
-
                     <p class="nome-depoimento"><b>Zé da Manga</b></p>
                     <p class="nota-depoimento">
                       <i class="fas fa-star"></i>
@@ -268,7 +301,6 @@
                       <i class="fas fa-star-half-alt"></i>&nbsp;
                       <span>4.5</span>
                     </p>
-
                   </div>
                 </div>
 
@@ -281,14 +313,12 @@
                   </span>
                   <i class="fas fa-quote-right"></i>
                 </p>
-
               </div>
 
               <div class="depoimento hidden" id="depoimento-2">
                 <div class="container-dados-depoimento">
                   <div class="imagem-depoimento"></div>
                   <div>
-
                     <p class="nome-depoimento"><b>Hinata Sacagute</b></p>
                     <p class="nota-depoimento">
                       <i class="fas fa-star"></i>
@@ -297,7 +327,6 @@
                       <i class="fas fa-star"></i>
                       <i class="fas fa-star"></i>&nbsp; <span>5.0</span>
                     </p>
-
                   </div>
                 </div>
 
@@ -310,14 +339,12 @@
                   </span>
                   <i class="fas fa-quote-right"></i>
                 </p>
-
               </div>
 
               <div class="depoimento hidden" id="depoimento-3">
                 <div class="container-dados-depoimento">
                   <div class="imagem-depoimento"></div>
                   <div>
-
                     <p class="nome-depoimento"><b>Goku da Silva</b></p>
                     <p class="nota-depoimento">
                       <i class="fas fa-star"></i>
@@ -326,7 +353,6 @@
                       <i class="fas fa-star"></i>
                       <i class="far fa-star"></i>&nbsp; <span>4.0</span>
                     </p>
-
                   </div>
                 </div>
 
@@ -339,12 +365,11 @@
                   </span>
                   <i class="fas fa-quote-right"></i>
                 </p>
-
               </div>
             </div>
-            <a class="btn btn-sm btn-white btn-social mr-3 active">1</a>
-            <a class="btn btn-sm btn-white btn-social mr-3">2</a>
-            <a class="btn btn-sm btn-white btn-social">3</a>
+            <a id="btnDepoimento-1" class="btn btn-sm btn-white btn-social mr-3 active" onclick="cardapio.metodos.abrirDepoimento(1)">1</a>
+            <a id="btnDepoimento-2" class="btn btn-sm btn-white btn-social mr-3" onclick="cardapio.metodos.abrirDepoimento(2)">2</a>
+            <a id="btnDepoimento-3" class="btn btn-sm btn-white btn-social" onclick="cardapio.metodos.abrirDepoimento(3)">3</a>
           </div>
         </div>
       </div>
@@ -354,10 +379,8 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
-
             <div class="card-secondary">
               <div class="row">
-
                 <div class="col-7">
                   <span class="hint-title"><b>Reserva</b></span>
                   <h1 class="title">
@@ -368,16 +391,21 @@
                     <br />
                     Reserve sua data e horário de forma simples e rápida.
                   </p>
-                  <a class="btn btn-yellow mt-4"> Fazer reserva </a>
+                  <a
+                    class="btn btn-yellow mt-4"
+                    href="#"
+                    id="btnReserva"
+                    target="_blank"
+                  >
+                    Fazer reserva
+                  </a>
                 </div>
 
                 <div class="col-5">
-
                   <div class="card-reserva"></div>
                   <div class="d-flex img-banner">
-                    <img src="./img/icone-reserva.svg" />
+                    <img src="./img/icone-reserva.svg" alt="reserve.img" />
                   </div>
-
                 </div>
               </div>
             </div>
@@ -389,9 +417,8 @@
     <footer>
       <div class="container">
         <div class="row">
-
           <div class="col-3 container-logo-footer">
-            <img class="logo-footer" src="./img/logo.png" />
+            <img class="logo-footer" src="./img/logo.png" alt="logoFooter.img" />
           </div>
 
           <div class="col-6 container-text-footer">
@@ -401,16 +428,15 @@
           </div>
 
           <div class="col-3 container-redes-footer">
-            
-            <a class="btn btn-sm btn-white btn-social mr-3">
+            <a href="https://instagram.com" target="_blank" class="btn btn-sm btn-white btn-social mr-3">
               <i class="fab fa-instagram"></i>
             </a>
 
-            <a class="btn btn-sm btn-white btn-social mr-3">
+            <a href="https://facebook.com" target="_blank" class="btn btn-sm btn-white btn-social mr-3">
               <i class="fab fa-facebook-f"></i>
             </a>
 
-            <a class="btn btn-sm btn-white btn-social">
+            <a href="#" id="btnWhatsFooter" target="_blank" onclick="cardapio.metodos.carregarBotaoWhats()" class="btn btn-sm btn-white btn-social">
               <i class="fab fa-whatsapp"></i>
             </a>
           </div>
@@ -419,11 +445,14 @@
     </footer>
 
     <div class="modal-full hidden" id="modalCarrinho">
-
       <div class="m-header">
         <div class="container">
-
-          <a class="btn btn-white btn-sm float-right" onclick="cardapio.metodos.abrirCarrinho(false)"> Fechar </a>
+          <a
+            class="btn btn-white btn-sm float-right"
+            onclick="cardapio.metodos.abrirCarrinho(false)"
+          >
+            Fechar
+          </a>
 
           <div class="etapas">
             <div class="etapa etapa1 active">1</div>
@@ -434,24 +463,24 @@
           <p class="title-carrinho mt-4">
             <b class="lblTituloEtapa">Seu carrinho</b>
           </p>
-
         </div>
       </div>
 
       <div class="m-body">
         <div class="container">
-
           <div id="itensCarrinho" class="row mr-0 ml-0 hidden">
             <!--Itens inseridos pelo JS-->
           </div>
 
           <div id="localEntrega" class="row mr-0 ml-0 hidden">
-
             <div class="col-4">
               <div class="form-group container-cep">
                 <label>CEP:</label>
                 <input id="txtCEP" type="text" class="form-control" />
-                <a class="btn btn-yellow btn-sm" onclick="cardapio.metodos.buscarCep()">
+                <a
+                  class="btn btn-yellow btn-sm"
+                  onclick="cardapio.metodos.buscarCep()"
+                >
                   <i class="fa fa-search"></i>
                 </a>
               </div>
@@ -532,7 +561,6 @@
           </div>
 
           <div id="resumoCarrinho" class="row mr-0 ml-0 hidden">
-
             <div class="col-12">
               <p class="title-carrinho mt-4">
                 <b>Itens do pedido</b>
@@ -541,9 +569,7 @@
 
             <div class="col-12">
               <div class="row" id="listaItensResumo">
-
                 <!--Itens inseridos pelo JS-->
-
               </div>
             </div>
 
@@ -561,19 +587,15 @@
                 <p class="text-endereco">
                   <b id="resumoEndereco"></b>
                 </p>
-                <p class="cidade-endereco" id="cidadeEndereco">
-                </p>
+                <p class="cidade-endereco" id="cidadeEndereco"></p>
               </div>
             </div>
-
           </div>
-
         </div>
       </div>
 
       <div class="m-footer">
         <div class="container-total text-right mb-4">
-
           <p class="mb-0">
             <span>Subtotal:</span>
             <span id="lblSubtotal">R$ 0,00</span>
@@ -588,24 +610,39 @@
             <span><b>Total:</b></span>
             <span class="valor-total"><b id="lblValorTotal">R$ 0,00</b></span>
           </p>
-
         </div>
-        <a onclick="cardapio.metodos.carregarEndereco()" class="btn btn-yellow float-right" id="btnEtapaPedido">
+        <a
+          onclick="cardapio.metodos.carregarEndereco()"
+          class="btn btn-yellow float-right"
+          id="btnEtapaPedido"
+        >
           Continuar
         </a>
 
-        <a onclick="cardapio.metodos.resumoPedido()" class="btn btn-yellow float-right hidden" id="btnEtapaEndereco">
+        <a
+          onclick="cardapio.metodos.resumoPedido()"
+          class="btn btn-yellow float-right hidden"
+          id="btnEtapaEndereco"
+        >
           Revisar Pedido
         </a>
 
-        <a href="#" class="btn btn-yellow float-right hidden" id="btnEtapaResumo" target="_blank">
+        <a
+          href="#"
+          class="btn btn-yellow float-right hidden"
+          id="btnEtapaResumo"
+          target="_blank"
+        >
           Enviar Pedido
         </a>
 
-        <a onclick="cardapio.metodos.voltarEtapa()" class="btn btn-white float-right mr-3 hidden" id="btnVoltar">
+        <a
+          onclick="cardapio.metodos.voltarEtapa()"
+          class="btn btn-white float-right mr-3 hidden"
+          id="btnVoltar"
+        >
           Voltar
         </a>
-
       </div>
     </div>
 
